@@ -19,7 +19,7 @@ import {
 const ProductDiv = ({prod}) => {
 
   return (
-    <div className='product-container'>
+    <>
           <div className="leftdiv">
           <div className="prod_img">
             <img src={prod.IMG} alt="error" />
@@ -43,7 +43,7 @@ const ProductDiv = ({prod}) => {
           </div>
         </div>
         
-        </div>
+        </>
   )
 }
 function Productlistpage() {
@@ -64,7 +64,7 @@ function Productlistpage() {
         getProducts(reqUrl);
       },[cat,search])
     return (
-      <>
+      <div className='product-container'>
         {
           products.map(prod => {
             return (
@@ -72,7 +72,7 @@ function Productlistpage() {
             )
           })
         }
-        </>
+        </div>
     )
 }
 
