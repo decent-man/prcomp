@@ -54,10 +54,13 @@ function Productlistpage() {
       const getProducts = async(url) => {
         const res = await axios.get(url);
         const result = res.data?.RESULTS ?? [];
+        console.log(res);
         setProducts(result);
       }
       useEffect(() => {
-        const reqUrl = `localhost:8080/${cat}/${search}`;
+        const searchUrl = search.split(/\s+/).join('+');
+        const reqUrl = `http://127.0.0.1:8000/${cat}/${searchUrl}`;
+        console.log(reqUrl,search);
         getProducts(reqUrl);
       },[cat,search])
     return (
