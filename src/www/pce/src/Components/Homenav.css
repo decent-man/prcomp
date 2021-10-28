@@ -1,5 +1,7 @@
 .navBar{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-left: 0px;
     margin-right: 00px;
     /* border: 2px solid blue; */
@@ -58,11 +60,7 @@
 }
 
 .shopcart{
-    margin-top:12px;
-    margin-bottom: 12px;
-    margin-left: 20px;
     cursor:pointer;
-    margin-right: 70px;
     width: 60px;
     height: 30px;
     border-radius: 10px;
@@ -75,13 +73,14 @@
 }
 
 .userSigning{
-    background-color:yellow;
-    /* margin-left: 40px; */
-    margin-top:12px;
-    margin-bottom: 12px;
     cursor:pointer;
-    width: 150px;
+    width: fit-content;
     text-align:center;
+}
+.userSigning > svg{
+    fill: white;
+    width: 60px;
+    height: 27.5px;
 }
 
 .userSigning:hover{

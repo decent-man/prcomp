@@ -3,6 +3,8 @@
     height:fit-content;
     display:flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
     /* background:red; */
 }
 
@@ -14,11 +16,11 @@
 
 .product_container{
     display: flex;
-    border-top: 5px solid  rgb(153, 147, 147);
+    /* border-top: 5px solid  rgb(153, 147, 147);
     border-bottom: 5px solid  rgb(153, 147, 147);
     border-left: 5px solid  rgb(153, 147, 147);
     border-right: 5px solid  rgb(153, 147, 147);
-    height: 200px;
+    height: 200px; */
 
 
 
@@ -26,17 +28,17 @@
 
 .leftdiv{
     height: 200px;
-    width: 50%;
+    width: 48%;
     display: flex;
-    border-top: 5px solid  rgb(153, 147, 147);
+    /* border-top: 5px solid  rgb(153, 147, 147);
     border-bottom: 5px solid  rgb(153, 147, 147);
     border-left: 5px solid  rgb(153, 147, 147);
-    border-right: 5px solid  rgb(153, 147, 147);
+    border-right: 5px solid  rgb(153, 147, 147); */
 }
 
 .rightdiv{
     display: flex;
-    border-left: 5px solid  rgb(153, 147, 147);
+    /* border-left: 5px solid  rgb(153, 147, 147); */
     height: 200px;
     width:50%;
 
@@ -57,7 +59,8 @@
     /* border: 1px solid green; */
     margin-top: 5px;
     height: 90%;
-    width: 25%;
+    width: fit-content;
+    margin-right: 1.2rem;
 
 }
   
@@ -86,18 +89,33 @@
     height: 190px;
     width: 50px;
   }
+  .popover__content::-webkit-scrollbar {
+    width: 1em;
+  }
+  
+  .spec > td:first-child{
+    font-weight: bold;
+  }
+   
+  .popover__content::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    width:20px;
+  }
   .popover__content {
     opacity: 0;
     visibility: hidden;
     position: absolute;
     /* left: 0px; */
-    transform: translate(0, 10px);
+    /* transform: translate(0, 10px); */
     background-color: white;
     padding: 1.5rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     /* width: auto; */
-    width: 300px;
-    height: 600px;
+    width: 400px;
+    height: 64%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
 
   }
   .popover__content:before {
@@ -109,8 +127,8 @@
     border-style: solid;
     border-width: 0 10px 10px 10px;
     border-color: transparent transparent #bfbfbf transparent;
-    transition-duration: 0.3s;
-    transition-property: transform;
+    /* transition-duration: 0.3s;
+    transition-property: transform; */
 
 
   }
@@ -119,7 +137,7 @@
     opacity: 1;
     visibility: visible;
     transform: translate(-260px, -20px);
-    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+    /* transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97); */
   }
   .popover__message {
     /* text-align: center; */

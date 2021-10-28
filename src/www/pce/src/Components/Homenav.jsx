@@ -12,12 +12,12 @@ function Navbar() {
     
     const categories = [
         {
-            name:'Clothing',
-            url:'clo'
-        },
-        {
             name:'Electronics',
             url:'elx'
+        },
+        {
+            name:'Clothing',
+            url:'clo'
         },
         {
             name:'Furniture',
@@ -42,22 +42,35 @@ function Navbar() {
             return (
             <div className="navBar">
 
-                <button className="logo">logo</button>
-    
+                <div onClick={() => history.push('/')} style={{
+                    cursor:'pointer'
+                }}>
+                    <img src="/storeFront.svg" alt="" />
+                </div>
+                <div style={{display:'flex'}} >
+
                 <select className="categoryDropdown"   onChange={handleCategoryChange}>
                     {
                         categories.map(({name,url}) => {
                             return (
                                 <option value={url} name={name}>{name}</option>
-                            )
-                        })
-                    }
+                                )
+                            })
+                        }
                 </select>
 
                <input className="search_bar" type="text" size="55" placeholder="search product..." value={searchWord} onChange={(e) => setSearchWord(e.target.value)} />
                 <button className="search_btn" onClick={handleSearch} > <FaSearch /></button>
+                 </div>
+                 <div style={{
+                     display:'flex',
+                     alignItems:'center',
+                     gap:'2rem'
+                 }}>
+
                 <img  className="shopcart" src="/shopping_cart.svg" alt="error" />
-                <button className="userSigning" ><FaUserCircle /> Sign up/Sign in </button>
+                <div className="userSigning" ><FaUserCircle />  </div>
+                 </div>
 
         </div>
     )

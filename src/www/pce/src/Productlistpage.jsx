@@ -16,7 +16,35 @@ import {
       return new URLSearchParams(useLocation().search);
   }
 
+const Specifications = ({specs}) => {
+
+  return (
+    <table>
+      {
+        Object.keys(specs).map(key => {
+          const value = specs[key];
+          return (
+            <tr className='spec'>
+              <td>
+                {key}
+              </td>
+              <td style={{wordWrap:'normal'}}>
+                {value}
+              </td>
+            </tr>
+          )
+        })
+      }
+    </table>
+  )
+}
 const ProductDiv = ({prod}) => {
+
+  let name = prod.NAME;
+
+  if(name.length > 110) {
+    name = `${name.slice(0,110)}...`
+  }
 
   return (
     <>
@@ -26,7 +54,7 @@ const ProductDiv = ({prod}) => {
           </div>
 
           <Productdef
-            name={prod.NAME}
+            name={name}
             price={prod.PRICE}
             availibility="Availibility"
             rating="4.7"
@@ -38,7 +66,13 @@ const ProductDiv = ({prod}) => {
               <h2 class="popover__title"><BsFillInfoCircleFill /></h2>
             
             <div class="popover__content">
-              <p class="popover__message">Specifications</p>
+              <p class="popover__message">
+                <h3>
+
+                <strong>Specifications</strong>
+                </h3>
+                <Specifications specs={prod.SPECS}/>
+              </p>
             </div>
           </div>
         </div>
@@ -51,10 +85,28 @@ function Productlistpage() {
       const cat = query.get('cat');
       const search = query.get('search');
       const [products,setProducts] = useState([]);
+      const [loading,setLoading] = useState(false);
       const getProducts = async(url) => {
-        const res = await axios.get(url);
-        const result = res.data?.RESULTS ?? [];
-        console.log(res);
+        setLoading(true);
+        // ------------AXIOS -----------------
+        // const res = await axios.get(url);
+        // let jsonRes = res.data;
+        // try{
+        //   jsonRes = JSON.parse(res.data);
+        // }
+        // catch(err){
+        //   console.log(err)
+        // }
+        // const result = jsonRes?.RESULTS ?? [];
+        // console.log(res);
+        
+        // --------------FETCH---------------
+        const res =  await fetch(url);
+        const response = await res.json();
+        const result = response?.RESULTS ?? [];
+        console.log(response)
+
+        setLoading(false);
         setProducts(result);
       }
       useEffect(() => {
@@ -63,6 +115,13 @@ function Productlistpage() {
         console.log(reqUrl,search);
         getProducts(reqUrl);
       },[cat,search])
+    
+      if(loading){
+        return (
+
+          <div className='loading'></div>
+        )
+      }
     return (
       <div className='product-container'>
         {
