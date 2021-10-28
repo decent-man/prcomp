@@ -1,5 +1,5 @@
 .content{
-    background-color: lightblue;
+    background-color: whitesmoke;
     /* border: 1px solid red; */
     padding-top: 5px;
     padding-bottom: 4px;
@@ -28,25 +28,31 @@
     padding: 11px;
 }
 
-.electronics{
+.category-block{
     width: 210px;
     height: 220px;
     /* border:1px solid black; */
     margin: 10px 10px; 
     border-radius: 20px;
-    background-color: white;
+    background-color: whitesmoke;
+    position: relative;
+    /*display: flex;*/
 }
 
-.electronics img{
-    padding-top: 20px;
+.category-block img{
     width: 100%;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 70%;
     /* border: 1px solid red; */
+    filter: brightness(0.5)
+    /*box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 50%);*/
 }
 
-.electronics a{
+.category-block img:hover {
+}
+
+.category-block a{
     text-decoration: none;
 }
 
@@ -55,164 +61,18 @@
     text-align:center;
     font-size: 1.3rem;
     font-weight: 600;
-    color: blue;
+    color: white;
+    position: absolute;
+    top: 22.5%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
     /* border: 1px solid blue;
     justify-content: center;
     display: flex; */
-    font-family: 'Cookie', cursive;
+    font-family: 'Futura', cursive;
 }
 
 .catName:hover{
     font-size: 1.55rem;
-}
-
-.furniture{
-    width: 210px;
-    height: 220px;
-    /* border:1px solid black; */
-    margin: 10px 10px;
-    border-radius: 20px; 
-    background-color: white;
-}
-
-.furniture img{
-    padding-top: 20px;
-    align-items: center;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    height: 70%;
-}
-
-.furniture a{
-    text-decoration: none;
-}
-
-.fashion{
-    width: 210px;
-    height: 220px;
-    /* border:1px solid black; */
-    margin: 10px 10px; 
-    border-radius: 20px;
-    background-color: white;
-}
-
-.fashion img{
-    padding-top: 20px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    height: 70%;
-}
-
-.fashion a{
-    text-decoration: none;
-}
-
-.grocery{
-    width: 210px;
-    height: 220px;
-    /* border:1px solid black; */
-    margin: 10px 10px;  
-    border-radius: 20px;
-    background-color: white;
-}
-
-.grocery img{
-    padding-top: 20px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    height: 70%;
-}
-
-.grocery a{
-    text-decoration: none;
-}
-
-.stationary{
-    width: 210px;
-    height: 220px;
-    /* border:1px solid black; */
-    margin: 10px 10px;  
-    border-radius: 20px;
-    background-color: white;
-}
-
-.stationary img{
-    padding-top: 20px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    height: 70%;
-}
-
-.stationary a{
-    text-decoration: none;
-}
-
-
-.garden{
-    width: 210px;
-    height: 220px;
-    /* border:1px solid black; */
-    margin: 10px 10px;  
-    border-radius: 20px;
-    background-color: white;
-}
-
-.garden img{
-    padding-top: 20px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    height: 70%;
-}
-
-.garden a{
-    text-decoration: none;
-}
-
-
-.toys{
-    width: 210px;
-    height: 220px;
-    /* border:1px solid black; */
-    margin: 10px 10px;  
-    border-radius: 20px;
-    background-color: white;
-}
-
-.toys img{
-    padding-top: 20px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    height: 70%;
-}
-
-.toys a{
-    text-decoration: none;
-}
-
-
-.books{
-    width: 210px;
-    height: 220px;
-    /* border:1px solid black; */
-    margin: 10px 10px; 
-    border-radius: 20px;
-    background-color: white; 
-}
-
-.books img{
-    padding-top: 20px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    height: 70%;
-}
-
-.books a{
-    text-decoration: none;
 }

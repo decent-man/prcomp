@@ -9,22 +9,22 @@ export default class Section extends React.Component {
 
                 <div className="containerRow1">
                     
-                    <div className="electronics">
+                    <div className="category-block">
                         <img src="/electronic-category.jpg" alt="error" />
                         <div className="catName">Electronics</div>
                     </div>    
                     
-                    <div className="furniture">
+                    <div className="category-block">
                         <img src="/furniture-category.jpg" alt="error" />
                         <div className="catName">Furniture</div>                    
                     </div>
 
-                    <div className="fashion">
+                    <div className="category-block">
                         <img src="/fashion-category.jpg" alt="error" />
                         <div className="catName">Fashion</div>
                     </div>
 
-                    <div className="grocery">
+                    <div className="category-block">
                         <img src="/grocery-category.jfif" alt="error" />
                         <div className="catName">Grocery</div>
                     </div>
@@ -33,22 +33,22 @@ export default class Section extends React.Component {
 
                 <div className="containerRow2">
 
-                    <div className="stationary">
+                    <div className="category-block">
                         <img src="/stationary-category.jpg" alt="error" />
                         <div className="catName">Stationary</div>
                     </div>
                     
-                    <div className="garden">  
+                    <div className="category-block">  
                         <img src="/garden-category.jpg" alt="error" />
                         <div className="catName">Garden</div>
                     </div>
                     
-                    <div className="toys">                    
+                    <div className="category-block">                    
                         <img src="/toys-category.jpg" alt="error" />
                         <div className="catName">Toys</div>
                     </div>
                     
-                    <div className="books">
+                    <div className="category-block">
                         <img src="/books-category.jpg" alt="error" />
                         <div className="catName">Books</div>
                     </div>

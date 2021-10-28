@@ -2,16 +2,18 @@ import React from 'react';
 import './Productdef.css';
 
 
-const Productdef = ({ name, price, availibility, rating, returnPolicy}) => {
+const Productdef = ({ name, price, store, rating, returnPolicy, warranty, url}) => {
     return (
         <div className="header_container">
-            <h4 className="name">{name}</h4>
+         <a href={url} target="_blank">
+                <h4 className="name">{name}</h4>
             <p className="pricetag">{price}</p>
-            <p classNme="stores">{availibility}</p>
-            <p classNme="rating">{rating}</p>
+            <p classNme="stores">{store}</p>
+            <p classNme="rating">{rating}⭐</p>
             <p classNme="returnpolicy">{returnPolicy}</p>
+            <p classNme="warranty">{warranty}</p>
+         </a>
         </div>
-
     )
 }
 

@@ -16,8 +16,13 @@ import {
       return new URLSearchParams(useLocation().search);
   }
 
-const Specifications = ({specs}) => {
-
+const Specifications = ({specifications}) => {
+  let specs = specifications;
+  try {
+    specs = JSON.parse(specifications);
+  }
+  catch(err) { return null }
+  //console.log(specs);
   return (
     <table>
       {
@@ -40,7 +45,10 @@ const Specifications = ({specs}) => {
 }
 const ProductDiv = ({prod}) => {
 
-  let name = prod.NAME;
+  let name = prod.name;
+  if (!isNaN(prod.price)) { 
+    return null;
+  }
 
   if(name.length > 110) {
     name = `${name.slice(0,110)}...`
@@ -50,14 +58,18 @@ const ProductDiv = ({prod}) => {
     <>
           <div className="leftdiv">
           <div className="prod_img">
-            <img src={prod.IMG} alt="error" />
+            <img src={prod.img} alt="error" />
           </div>
 
           <Productdef
             name={name}
-            price={prod.PRICE}
-            availibility="Availibility"
-            rating="4.7"
+            price={prod.price}
+            store={prod.store}
+            url={prod.url}
+            warranty={prod.warranty}
+            returnPolicy={prod.return_replace}
+            //availibility="Availibility"
+            rating={Math.floor(Math.random() * (2) ) + 3}
 
           />
 
@@ -71,7 +83,7 @@ const ProductDiv = ({prod}) => {
 
                 <strong>Specifications</strong>
                 </h3>
-                <Specifications specs={prod.SPECS}/>
+                <Specifications specifications={(prod.specs)}/>
               </p>
             </div>
           </div>
@@ -88,6 +100,7 @@ function Productlistpage() {
       const [loading,setLoading] = useState(false);
       const getProducts = async(url) => {
         setLoading(true);
+        try{
         // ------------AXIOS -----------------
         // const res = await axios.get(url);
         // let jsonRes = res.data;
@@ -102,17 +115,22 @@ function Productlistpage() {
         
         // --------------FETCH---------------
         const res =  await fetch(url);
+        //console.log(res)
         const response = await res.json();
-        const result = response?.RESULTS ?? [];
-        console.log(response)
-
+        const amazon = response?.listings[0] ?? [];
+        const flipkart = response?.listings[1] ?? [];
+        const resFinal = [...amazon,...flipkart]
+        //console.log(resFinal)
         setLoading(false);
-        setProducts(result);
+        setProducts(resFinal);
+        }
+        catch(err) { setLoading(false) }
+
       }
       useEffect(() => {
         const searchUrl = search.split(/\s+/).join('+');
         const reqUrl = `http://127.0.0.1:8000/${cat}/${searchUrl}`;
-        console.log(reqUrl,search);
+        //console.log(reqUrl,search);
         getProducts(reqUrl);
       },[cat,search])
     

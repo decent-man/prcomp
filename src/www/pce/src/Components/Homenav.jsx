@@ -39,6 +39,9 @@ function Navbar() {
             const {url,name} = selectedCategory;
             history.push(`/results?cat=${url}&search=${searchUrl}`);
         }
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") { handleSearch() }
+    }
             return (
             <div className="navBar">
 
@@ -59,7 +62,7 @@ function Navbar() {
                         }
                 </select>
 
-               <input className="search_bar" type="text" size="55" placeholder="search product..." value={searchWord} onChange={(e) => setSearchWord(e.target.value)} />
+               <input className="search_bar" type="text" size="55" placeholder="search product..." value={searchWord} onChange={(e) => setSearchWord(e.target.value)} onKeyDown={handleKeyDown} />
                 <button className="search_btn" onClick={handleSearch} > <FaSearch /></button>
                  </div>
                  <div style={{
