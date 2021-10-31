@@ -1,17 +1,17 @@
 import './App.css';
-import Homenav from './Components/Homenav';
-import Homecatalog from './Components/Homecatalog';
-import Homefooter from './Components/Homefooter';
+import Navbar from './Components/Navbar';
+import Catalog from './Components/Catalog';
+import Footer from './Components/Footer';
 
 
 function Homepage() {
   return (
     <div>
       <div>
-        <Homecatalog />
+        <Catalog />
         </div>
         <div>
-          <Homefooter />
+          <Footer />
           </div>
            
       </div>

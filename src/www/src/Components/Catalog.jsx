@@ -1,5 +1,5 @@
 import React from 'react'
-import './Homecatalog.css'
+import './Catalog.css'
 
 export default class Section extends React.Component {
 

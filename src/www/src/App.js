@@ -2,14 +2,14 @@ import './App.css';
 import Homepage from './Homepage';
 import Productlistpage from './Productlistpage';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import Homenav from './Components/Homenav';
+import Navbar from './Components/Navbar';
 
 
 function App() {
   return (
     <>
       <Router>
-          <Homenav/>
+          <Navbar/>
         <Switch>
           <Route path='/' exact>
             <Homepage/>

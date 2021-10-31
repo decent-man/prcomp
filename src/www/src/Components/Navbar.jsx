@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import './Homenav.css';
+import './Navbar.css';
 import { FaSearch } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
