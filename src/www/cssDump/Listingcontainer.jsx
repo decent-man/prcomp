@@ -1,5 +1,5 @@
 import React from 'react';
-import './Listingcontainer.css';
+//import './Listingcontainer.css';
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import Productdef from "./Productdef";
 

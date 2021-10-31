@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Listingcontainer from './Components/Listingcontainer';
-import Listingnav from './Components/Listingnav';
+//import Listingcontainer from './Components/Listingcontainer';
+//import Listingnav from './Components/Listingnav';
 import Productdef from "./Components/Productdef";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 
@@ -21,10 +21,10 @@ const Specifications = ({specifications}) => {
   try {
     specs = JSON.parse(specifications);
   }
-  catch(err) { return null }
+  catch(err) { return (<h5 className="unavail"> Unavailable </h5>) }
   //console.log(specs);
   return (
-    <table>
+    <table className="specTable">
       {
         Object.keys(specs).map(key => {
           const value = specs[key];
@@ -58,13 +58,15 @@ const ProductDiv = ({prod}) => {
     <>
           <div className="leftdiv">
           <div className="prod_img">
-            <img src={prod.img} alt="error" />
+          <a src={prod.url} target="_blank">
+            <img src={prod.img} alt="error"/>
+          </a>
           </div>
 
           <Productdef
             name={name}
             price={prod.price}
-            store={prod.store}
+            store={prod.store + ".png"}
             url={prod.url}
             warranty={prod.warranty}
             returnPolicy={prod.return_replace}
@@ -78,11 +80,7 @@ const ProductDiv = ({prod}) => {
               <h2 class="popover__title"><BsFillInfoCircleFill /></h2>
             
             <div class="popover__content">
-              <p class="popover__message">
-                <h3>
-
-                <strong>Specifications</strong>
-                </h3>
+              <p class="popover__message"><h3 className="specHead">Specifications</h3>
                 <Specifications specifications={(prod.specs)}/>
               </p>
             </div>

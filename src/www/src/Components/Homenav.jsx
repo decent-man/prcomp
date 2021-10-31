@@ -7,9 +7,9 @@ import { FaUserCircle } from "react-icons/fa";
 import axios from 'axios';
 import {useHistory} from 'react-router-dom'
 
+const websiteName = "kilowog";
 
 function Navbar() {
-    
     const categories = [
         {
             name:'Electronics',
@@ -42,37 +42,28 @@ function Navbar() {
     const handleKeyDown = (e) => {
         if (e.key === "Enter") { handleSearch() }
     }
+                    //<p className="siteName">{websiteName}</p>
             return (
             <div className="navBar">
-
-                <div onClick={() => history.push('/')} style={{
-                    cursor:'pointer'
-                }}>
-                    <img src="/storeFront.svg" alt="" />
+                <div className="logoName" onClick={() => history.push('/')}>
+                    <img className="logo" src="/-kilowog-.svg" alt=""/>
                 </div>
-                <div style={{display:'flex'}} >
-
-                <select className="categoryDropdown"   onChange={handleCategoryChange}>
-                    {
-                        categories.map(({name,url}) => {
-                            return (
-                                <option value={url} name={name}>{name}</option>
-                                )
-                            })
-                        }
-                </select>
-
-               <input className="search_bar" type="text" size="55" placeholder="search product..." value={searchWord} onChange={(e) => setSearchWord(e.target.value)} onKeyDown={handleKeyDown} />
-                <button className="search_btn" onClick={handleSearch} > <FaSearch /></button>
-                 </div>
-                 <div style={{
-                     display:'flex',
-                     alignItems:'center',
-                     gap:'2rem'
-                 }}>
-
-                <img  className="shopcart" src="/shopping_cart.svg" alt="error" />
-                <div className="userSigning" ><FaUserCircle />  </div>
+                <div className="sBarGroup">
+                    <select className="categoryDropdown" onChange={handleCategoryChange}>
+                        {
+                            categories.map(({name,url}) => {
+                                return (
+                                    <option className="catOpts" value={url} name={name}>{name}</option>
+                                    )
+                                })
+                            }
+                    </select>
+                   <input className="search_bar" type="text" size="55" placeholder="Search for..." value={searchWord} onChange={(e) => setSearchWord(e.target.value)} onKeyDown={handleKeyDown} />
+                    <button className="search_btn" onClick={handleSearch} > <FaSearch color="gray"/></button>
+                </div>
+                 <div className="userOpts">
+                    <img  className="shopcart" src="/shopping_cart.svg" alt="error" />
+                    <div className="userSigning" ><FaUserCircle />  </div>
                  </div>
 
         </div>

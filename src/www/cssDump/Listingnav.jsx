@@ -1,5 +1,5 @@
 import React from 'react';
-import './Listingnav.css';
+//import './Listingnav.css';
 import { FaSearch } from "react-icons/fa";
 // import { FaShoppingCart } from "react-icons/fa";
 // import { FaUserCircle } from "react-icons/fa";
@@ -15,7 +15,6 @@ export default class Listingnav extends React.Component {
         return (
             <div className="navBar">
 
-                <button className="logo">logo</button>
                 <select className="categoryDropdown">
                     <option selected value="all-cat">ALL</option>
                     <option value="cat-1">category1</option>

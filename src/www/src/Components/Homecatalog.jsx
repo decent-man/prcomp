@@ -3,12 +3,13 @@ import './Homecatalog.css'
 
 export default class Section extends React.Component {
 
+                //<div className="containerRow1">
+                //</div>
+                //<div className="containerRow2">
+                //</div>
     render() {
         return (
             <div className="content">
-
-                <div className="containerRow1">
-                    
                     <div className="category-block">
                         <img src="/electronic-category.jpg" alt="error" />
                         <div className="catName">Electronics</div>
@@ -29,10 +30,6 @@ export default class Section extends React.Component {
                         <div className="catName">Grocery</div>
                     </div>
 
-                </div>
-
-                <div className="containerRow2">
-
                     <div className="category-block">
                         <img src="/stationary-category.jpg" alt="error" />
                         <div className="catName">Stationary</div>
@@ -52,11 +49,7 @@ export default class Section extends React.Component {
                         <img src="/books-category.jpg" alt="error" />
                         <div className="catName">Books</div>
                     </div>
-                
-                </div>
-
             </div>
-
         )
     }
 }
