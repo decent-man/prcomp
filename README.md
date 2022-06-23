@@ -1,4 +1,4 @@
-# prcomp
+# prcomp(older UI)
 
 A website which compares product prices,stat,store services,etc
 
